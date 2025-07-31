@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to Our Website! {{user}}</h1>
+    <p>This website is currently under development. Stay tuned for updates and new features.</p>
+
+    {% for task in tasks %}
+    <div>
+        <div><h3>Task Title: {{task.title}}</h3></div>
+        <div><p>Task Description: {{task.description}}</p></div>
+        <hr>
+    </div>
+    {% endfor %}
+    
+    <h2>About Us</h2>
+    <p>We are dedicated to providing quality content and services to our users. Our team is working hard to launch the full version soon.</p>
+    <h2>Contact</h2>
+    <p>If you have any questions or feedback, please <a href="mailto:info@example.com">contact us</a>.</p>
+    <h2>Latest News</h2>
+    <ul>
+        <li>Website launched - June 2024</li>
+        <li>New features coming soon!</li>
+    </ul>
+</body>
+</html>
