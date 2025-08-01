@@ -49,3 +49,11 @@ class StudentProfile(models.Model):
 
     def __str__(self):
         return f"{self.student}'s profile"
+
+class Parent(models.Model):
+    name = models.CharField(max_length=200)
+
+    children = models.ManyToManyField(Student)
+
+    def __str__(self):
+        return self.name

@@ -1,11 +1,41 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Task
+from .models import Task, School
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
 # tasks = [{'title': 'Task One', "description": 'This is Task One description'},
 #              {'title': 'Task Two', "description": 'This is Task Two description'}
 #     ]
+
+class SchoolCreate(CreateView):
+    model = School
+    fields = "__all__"
+    success_url = reverse_lazy("schools_list")
+
+class SchoolUpdate(UpdateView):
+    model = School
+    fields = "__all__"
+    success_url = reverse_lazy("schools_list")
+
+class SchoolDelete(DeleteView):
+    model = School
+    success_url = reverse_lazy("schools_list")
+
+class SchoolDetailView(DetailView):
+    model = School
+
+class SchoolView(ListView):
+    model = School
+
+def school_detail(request, school_id):
+    print('This is dynamic url', school_id)
+    return HttpResponse(f"<h1>This is dynamic url demo. The dyanmic value is {school_id}</h1>")
+
+# def schools(request):
+#     print("This is school page.")
+#     return HttpResponse("<h1>This is school Page.</h1>")
 
 def home(request):
     print("This is home page.")
