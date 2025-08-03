@@ -148,12 +148,12 @@ Register models in admin.py to manage them via the admin interface.
 
 ## 📁 Useful Commands
 <pre>```
-Command	                            Description
-python manage.py makemigrations	    Prepares migrations for model changes
-python manage.py migrate	        Applies migrations to the DB
-python manage.py createsuperuser	Creates an admin user
-python manage.py runserver	        Starts development server
-python manage.py startapp appname	Creates a new app
+Command	                                    Description
+python manage.py makemigrations	            Prepares migrations for model changes
+python manage.py migrate	                Applies migrations to the DB
+python manage.py createsuperuser	        Creates an admin user
+python manage.py runserver	                Starts development server
+python manage.py startapp appname	        Creates a new app
 ``` </pre>
 ## 🧪 Testing Your Setup
 Create a simple model in models.py
