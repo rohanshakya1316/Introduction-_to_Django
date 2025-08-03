@@ -71,12 +71,12 @@ Inside your project folder:
 python manage.py startapp appname
 
 Add the app to INSTALLED_APPS in projectname/settings.py:
-
+``` python
 INSTALLED_APPS = [
     ...
     'appname',
 ]
-
+```
 ## 🔧 Run Migrations
 
 ### Create migration files
@@ -95,11 +95,15 @@ Visit http://127.0.0.1:8000 in your browser.
 Create a templates folder inside your app:
 
 appname/
-    templates/
-        appname/
-            home.html
-In settings.py, update:
 
+    templates/
+
+        appname/
+
+            home.html
+
+In settings.py, update:
+``` python
 TEMPLATES = [
     {
         ...
@@ -107,30 +111,30 @@ TEMPLATES = [
         ...
     },
 ]
-
+```
 Use it in your view:
-
+``` python
 from django.shortcuts import render
 
 def home(request):
     return render(request, 'appname/home.html')
-
+```
 ## 🎨 Static Files (CSS, JS, Images)
 Create a folder:
-
+```
 appname/
     static/
         appname/
             style.css
 Add this to settings.py:
-
+```
 STATIC_URL = '/static/'
 
 Load static files in templates:
-
+```
 {% load static %}
 <link rel="stylesheet" href="{% static 'appname/style.css' %}">
-
+```
 ## 🔐 Admin Panel
 Create a superuser:
 
@@ -143,13 +147,14 @@ http://127.0.0.1:8000/admin
 Register models in admin.py to manage them via the admin interface.
 
 ## 📁 Useful Commands
+<pre>```
 Command	                            Description
 python manage.py makemigrations	    Prepares migrations for model changes
 python manage.py migrate	        Applies migrations to the DB
 python manage.py createsuperuser	Creates an admin user
 python manage.py runserver	        Starts development server
 python manage.py startapp appname	Creates a new app
-
+``` </pre>
 ## 🧪 Testing Your Setup
 Create a simple model in models.py
 
