@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome, {{user.name}}</h1>
+    <h1>Your age is {{user.age}}.</h1>
+    <h1>Your interests is {{interests.2}}.</h1>
+    {% comment "" %}
+        <h1>Oject's value is {{demo.content}}.</h1>
+    {% endcomment %}
+    
+    {% for key in user %}
+        <p>{{key}}</p>
+    {% endfor %}
+
+    {% for index in interests %}
+        <li>
+            {{forloop.counter}}
+            {{index}}
+        </li>
+    {% endfor %}
+
+    <h2>Users Details</h2>
+    {% for key, value in user.items %}
+        {{key}} : {{value}} <br>
+    {% endfor %}
+
+</body>
+</html>
